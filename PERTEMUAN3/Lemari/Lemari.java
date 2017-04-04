@@ -1,17 +1,11 @@
-class LemariPakaianBaju{
-		String jenisBaju;
-		String warnaBaju;
-		int hargaBaju;
-
-    public LemariPakaianBaju(String jenisBaju, String warnaBaju, int hargaBaju) {
-        this.jenisBaju = jenisBaju;
-        this.warnaBaju = warnaBaju;
-        this.hargaBaju = hargaBaju;
-    }               
-
-	int tambahBaju(int b1, int b2){
-		return b1 + b2;
-	}
+class LemariPakaian{
+	String jenisBaju;
+	String warnaBaju;
+	int hargaBaju;
+	String jenisCelana;
+	String warnaCelana;
+	int hargaCelana;
+	
 	void tampilJenisBaju(){
 		System.out.println("Baju yang ada di lemari adalah " + jenisBaju);
 	}
@@ -20,22 +14,6 @@ class LemariPakaianBaju{
 	}
 	void tampilHargaBaju(){
 		System.out.println("Harga bajunya adalah Rp." + hargaBaju);
-	}
-}
-
-class LemariPakaianCelana{
-	String jenisCelana;
-	String warnaCelana;
-	int hargaCelana;
-
-	public LemariPakaianCelana(String jenisCelana, String warnaCelana, int hargaCelana) {
-		this.jenisCelana = jenisCelana;
-		this.warnaCelana = warnaCelana;
-		this.hargaCelana = hargaCelana;
-	}
-                               
-    int tambahCelana(int b1, int b2){
-		return b1 + b2;
 	}
 	void tampilJenisCelana(){
 		System.out.println("Celana yang ada di lemari adalah " + jenisCelana);
@@ -51,16 +29,9 @@ class LemariPakaianCelana{
 class LemariBuku{
 	String judulBuku;
 	String pengarangBuku;
-	int hargaLKS;
-	int kodeBuku;
-
-    public LemariBuku(String judulBuku, String pengarangBuku, int hargaLKS, int kodeBuku) {
-        this.judulBuku = judulBuku;
-        this.pengarangBuku = pengarangBuku;
-        this.hargaLKS = hargaLKS;
-        this.kodeBuku = kodeBuku;
-    }
-		
+	short hargaLKS;
+	byte kodeBuku;
+	
 	void tampilKodeBuku(){
 		System.out.println("Kode Buku = " + kodeBuku);
 	}
@@ -77,18 +48,28 @@ class LemariBuku{
 
 class Lemari{
 	public static void main(String[] args){
-		LemariPakaianBaju Baju = new LemariPakaianBaju("Kaos Lengan Panjang","Biru",50000);
-		LemariPakaianCelana Celana = new LemariPakaianCelana("Celana Jeans","Hitam",30000);
-		LemariBuku Buku = new LemariBuku("PROLAN","Ilham Rizki",15000,101);
+		LemariPakaian Baju = new LemariPakaian();
+		LemariPakaian Celana = new LemariPakaian();
+		LemariBuku Buku = new LemariBuku();
+		
+		Baju.jenisBaju = "Kaos Lengan Panjang";
+		Baju.warnaBaju = "Biru";
+		Baju.hargaBaju = 50000;
+		Celana.jenisCelana = "Celana Jeans";
+		Celana.warnaCelana = "Hitam";
+		Celana.hargaCelana = 30000;
+		
+		Buku.kodeBuku = 101;
+		Buku.judulBuku = "PROLAN";
+		Buku.pengarangBuku = "Ilham R. H.";
+		Buku.hargaLKS = 15000;
 		
 		Baju.tampilJenisBaju();
 		Baju.tampilWarnaBaju();
 		Baju.tampilHargaBaju();
-        System.out.println("Baju telah ditambahkan. Jumlah baju anda = " + Baju.tambahBaju(1, 1));
 		Celana.tampilJenisCelana();
 		Celana.tampilWarnaCelana();
 		Celana.tampilHargaCelana();
-        System.out.println("Celana telah ditambahkan. Jumlah celana anda = " + Celana.tambahCelana(1, 3));
 		System.out.println();
 		Buku.tampilKodeBuku();
 		Buku.tampilJudulBuku();
